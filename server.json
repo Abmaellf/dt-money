@@ -1,38 +1,109 @@
 {
     "transactions": [
         {
-			"id": "1",
+			"id": 1,
 			"description":"Desenvolvimento de site",
 			"type":"income",
 			"category":"Venda",
-			"price":"20000",
+			"price":4000,
 			"createdAt": "2025-05-08T22:20:07.279Z"
 		},
 		{
-			"id": "2",
+			"id": 2,
 			"description":"Hamburger",
 			"type":"outcome",
 			"category":"Alimentação",
-			"price":"50",
+			"price":50,
 			"createdAt": "2025-05-08T22:00:07.279Z"
 		}
         ,
 		{
-			"id": "3",
+			"id": 3,
 			"description":"Energia",
 			"type":"outcome",
-			"category":"Energis",
-			"price":"24000",
+			"category":"Energisa",
+			"price":1000,
 			"createdAt": "2025-06-08T22:00:07.279Z"
 		}
 		,
 		{
-			"id": "4",
+			"id": 4,
 			"description":"Compras",
 			"type":"outcome",
-			"category":"Energis",
-			"price":"24000",
+			"category":"Energisa",
+			"price":1000,
 			"createdAt": "2025-06-09T22:00:07.279Z"
 		}
+		,
+		{
+			"id": 5,
+			"description":"Compras",
+			"type":"outcome",
+			"category":"Energisa",
+			"price":1000,
+			"createdAt": "2025-06-09T22:00:07.279Z"
+		}
+		,
+		{
+			"id": 6,
+			"description":"Compras",
+			"type":"outcome",
+			"category":"Energisa",
+			"price":1000,
+			"createdAt": "2025-06-09T22:00:07.279Z"
+		}
+		,
+		{
+			"id": 7,
+			"description":"Compras",
+			"type":"outcome",
+			"category":"Energisa",
+			"price":1000,
+			"createdAt": "2025-06-09T22:00:07.279Z"
+		}
+		,
+		{
+			"id": 8,
+			"description":"Compras",
+			"type":"outcome",
+			"category":"Energisa",
+			"price":1000,
+			"createdAt": "2025-06-09T22:00:07.279Z"
+		}
+		,
+		{
+			"id": 9,
+			"description":"Compras",
+			"type":"outcome",
+			"category":"Energisa",
+			"price":1000,
+			"createdAt": "2025-06-09T22:00:07.279Z"
+		}
+		,
+		{
+			"id": 10,
+			"description":"Compras",
+			"type":"outcome",
+			"category":"Energisa",
+			"price":1000,
+			"createdAt": "2025-06-09T22:00:07.279Z"
+		},
+		{
+			"id": 11,
+			"description":"Desenvolvimento de site",
+			"type":"income",
+			"category":"Venda",
+			"price":4000,
+			"createdAt": "2025-05-08T22:20:07.279Z"
+		},
+		{
+			"id": 12,
+			"description":"Desenvolvimento de site",
+			"type":"income",
+			"category":"Venda",
+			"price":4000,
+			"createdAt": "2025-05-08T22:20:07.279Z"
+		}
+
     ]
 }
