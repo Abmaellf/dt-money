@@ -3,14 +3,14 @@ import { CloseButton, Content, Overlay, TransactionType, TransactionTypeButton }
 import { ArrowCircleDown, ArrowCircleUp, X } from "phosphor-react";
 import * as z from 'zod';
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 
 /*1º CRIAR O SCHEMA E VALIDAÇÃO DE TIPO DE VARIÁVEIS (STRING, NUMBER, UNUM ETC.)*/
 const newTransactionFormSchema = z.object({
     description: z.string(),
     price: z.number(),
     category: z.string(),
-    // type: z.enum(['income', 'outcome']),
+    type: z.enum(['income', 'outcome']),
 })
 
 /*2º TYPAGEM DO FORMULARIO COM O TIPO DO SCHEMA DEFINIDO NO ZOD, ISSO IRA RETORNAR AS TIPAGENS DOS CAMPOS DO FORMULARIOS  */
@@ -22,11 +22,15 @@ export function NewTransactionModal() {
     /* 3º DESESTRUTURAR OS METODOS DO USEFORM QUE IREMOSUTILIZAR */
     /*O formulario será do tipo do type (newTransactionFormaInputs) que inferimos do schema newTransactionFormSchema*/
     const { 
+        control,
         register,
         handleSubmit,
         formState: { isSubmitting }  // 9º  receber do formState a informação(isSubmit=true) indicado quando o form esta em submição
     } = useForm<newTransactionFormaInputs>({
-        resolver: zodResolver(newTransactionFormSchema)
+        resolver: zodResolver(newTransactionFormSchema),
+        defaultValues: {
+            type: 'income'
+        }
     })
     async function handleCreateNewTransaction(data: newTransactionFormaInputs) {/* 6º Criar a função com as regras, para serchamado no handleSubmit passado no onSubmit*/
         await new Promise(resolve => setTimeout(resolve, 2000));               {/* 8º assinar a função como async para testes e criar o Promise com timeout para simular um atraso */}
@@ -61,18 +65,28 @@ export function NewTransactionModal() {
                         {...register('category')} /* 4º Chamar o register para cada valor input com o seu respesctivo schema */
                      />
 
-                     <TransactionType>
-                            <TransactionTypeButton variant="income" value="income">
-                                <ArrowCircleUp size={24}/>
-                                Entrada
-                            </TransactionTypeButton>
+                     <Controller
+                        control={control}
+                        name="type"
+                        render={({field}) => {
 
-                            <TransactionTypeButton variant="outcome" value="outcome">
-                                <ArrowCircleDown size={24}/>
-                                Saida
-                            </TransactionTypeButton>
-                        
-                     </TransactionType>
+                           console.log(field) 
+                            return (
+                                <TransactionType onValueChange={field.onChange} value={field.value}>
+                                        <TransactionTypeButton variant="income" value="income">
+                                            <ArrowCircleUp size={24}/>
+                                            Entrada
+                                        </TransactionTypeButton>
+
+                                        <TransactionTypeButton variant="outcome" value="outcome">
+                                            <ArrowCircleDown size={24}/>
+                                            Saida
+                                        </TransactionTypeButton>
+                                    
+                                </TransactionType>
+                            )
+                        }}
+                     />
 
                      <button type="submit" disabled={isSubmitting}> {/* 10º disibled - o botão estara desabilitado quando o isSubmint for true && Acessar os styles para definir o botão disabled */}
                         Cadastrar
