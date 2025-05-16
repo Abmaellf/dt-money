@@ -104,6 +104,15 @@
 			"price":4000,
 			"createdAt": "2025-05-08T22:20:07.279Z"
 		}
+		,
+		{
+			"id": 13,
+			"description":"Padaria",
+			"type":"income",
+			"category":"Venda",
+			"price":4000,
+			"createdAt": "2025-05-08T22:20:07.279Z"
+		}
 
     ]
 }

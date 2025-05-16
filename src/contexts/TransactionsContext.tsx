@@ -10,13 +10,14 @@ interface Transaction {
 
 interface TransactionContextType {
     transactions: Transaction[];
+    fetchTransactions: (query?: string) => Promise<void>;
 }
 
 interface TransactionsProviderType {
     children: ReactNode;
 }
 
-export const TransactionContext = createContext({} as TransactionContextType )
+export const TransactionsContext = createContext({} as TransactionContextType )
 
 
 export function TransactionsProvider({children}:TransactionsProviderType) {
@@ -25,8 +26,17 @@ export function TransactionsProvider({children}:TransactionsProviderType) {
     const [transactions, setTransactions ] = useState<Transaction[]>([]);
     
     //função assincrona que busca as transações da API via fetch e atualiza o state setTransactions com os dados retornado
-    async function loadTransactions() {
-        const response = await fetch('http://localhost:3333/transactions')
+    async function fetchTransactions(query?: string) {
+
+        const url = new URL('http://localhost:3333/transactions');
+
+        if(query) {
+            url.searchParams.append('q', query);
+        }
+        console.log(url);
+
+        
+        const response = await fetch(url)
         const data = await response.json();
         
             setTransactions(data);
@@ -34,12 +44,15 @@ export function TransactionsProvider({children}:TransactionsProviderType) {
     
     // useEffect que executa apenas uma vez quando a pagina for renderizada
     useEffect(() => {
-        loadTransactions()
+        fetchTransactions()
     }, [])
 
     return(
-        <TransactionContext.Provider value={{transactions}}>
+        <TransactionsContext.Provider value={{
+            transactions,
+            fetchTransactions
+        }}>
             {children}
-        </TransactionContext.Provider>
+        </TransactionsContext.Provider>
     )
 }
