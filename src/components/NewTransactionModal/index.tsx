@@ -4,6 +4,8 @@ import { ArrowCircleDown, ArrowCircleUp, X } from "phosphor-react";
 import * as z from 'zod';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
+import { useContext } from "react";
+import { TransactionsContext } from "../../contexts/TransactionsContext";
 
 /*1º CRIAR O SCHEMA E VALIDAÇÃO DE TIPO DE VARIÁVEIS (STRING, NUMBER, UNUM ETC.)*/
 const newTransactionFormSchema = z.object({
@@ -19,13 +21,16 @@ type newTransactionFormaInputs = z.infer<typeof newTransactionFormSchema>;
 
 export function NewTransactionModal() {
 
+    const { createTransactions } = useContext(TransactionsContext);
+
     /* 3º DESESTRUTURAR OS METODOS DO USEFORM QUE IREMOSUTILIZAR */
     /*O formulario será do tipo do type (newTransactionFormaInputs) que inferimos do schema newTransactionFormSchema*/
     const { 
         control,
         register,
         handleSubmit,
-        formState: { isSubmitting }  // 9º  receber do formState a informação(isSubmit=true) indicado quando o form esta em submição
+        formState: { isSubmitting },  // 9º  receber do formState a informação(isSubmit=true) indicado quando o form esta em submição
+        reset,
     } = useForm<newTransactionFormaInputs>({
         resolver: zodResolver(newTransactionFormSchema),
         defaultValues: {
@@ -33,8 +38,17 @@ export function NewTransactionModal() {
         }
     })
     async function handleCreateNewTransaction(data: newTransactionFormaInputs) {/* 6º Criar a função com as regras, para serchamado no handleSubmit passado no onSubmit*/
-        await new Promise(resolve => setTimeout(resolve, 2000));               {/* 8º assinar a função como async para testes e criar o Promise com timeout para simular um atraso */}
-        console.log(data);
+         {/* await new Promise(resolve => setTimeout(resolve, 2000));                8º assinar a função como async para testes e criar o Promise com timeout para simular um atraso */}
+       const { description, price, category, type} = data;
+
+       await createTransactions({
+         description, 
+         price, 
+         category, 
+         type
+       })
+    
+        reset();
     }               
     return(
         <Dialog.Portal>

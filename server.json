@@ -1,118 +1,44 @@
 {
-    "transactions": [
-        {
-			"id": 1,
-			"description":"Desenvolvimento de site",
-			"type":"income",
-			"category":"Venda",
-			"price":4000,
-			"createdAt": "2025-05-08T22:20:07.279Z"
-		},
-		{
-			"id": 2,
-			"description":"Hamburger",
-			"type":"outcome",
-			"category":"Alimentação",
-			"price":50,
-			"createdAt": "2025-05-08T22:00:07.279Z"
-		}
-        ,
-		{
-			"id": 3,
-			"description":"Energia",
-			"type":"outcome",
-			"category":"Energisa",
-			"price":1000,
-			"createdAt": "2025-06-08T22:00:07.279Z"
-		}
-		,
-		{
-			"id": 4,
-			"description":"Compras",
-			"type":"outcome",
-			"category":"Energisa",
-			"price":1000,
-			"createdAt": "2025-06-09T22:00:07.279Z"
-		}
-		,
-		{
-			"id": 5,
-			"description":"Compras",
-			"type":"outcome",
-			"category":"Energisa",
-			"price":1000,
-			"createdAt": "2025-06-09T22:00:07.279Z"
-		}
-		,
-		{
-			"id": 6,
-			"description":"Compras",
-			"type":"outcome",
-			"category":"Energisa",
-			"price":1000,
-			"createdAt": "2025-06-09T22:00:07.279Z"
-		}
-		,
-		{
-			"id": 7,
-			"description":"Compras",
-			"type":"outcome",
-			"category":"Energisa",
-			"price":1000,
-			"createdAt": "2025-06-09T22:00:07.279Z"
-		}
-		,
-		{
-			"id": 8,
-			"description":"Compras",
-			"type":"outcome",
-			"category":"Energisa",
-			"price":1000,
-			"createdAt": "2025-06-09T22:00:07.279Z"
-		}
-		,
-		{
-			"id": 9,
-			"description":"Compras",
-			"type":"outcome",
-			"category":"Energisa",
-			"price":1000,
-			"createdAt": "2025-06-09T22:00:07.279Z"
-		}
-		,
-		{
-			"id": 10,
-			"description":"Compras",
-			"type":"outcome",
-			"category":"Energisa",
-			"price":1000,
-			"createdAt": "2025-06-09T22:00:07.279Z"
-		},
-		{
-			"id": 11,
-			"description":"Desenvolvimento de site",
-			"type":"income",
-			"category":"Venda",
-			"price":4000,
-			"createdAt": "2025-05-08T22:20:07.279Z"
-		},
-		{
-			"id": 12,
-			"description":"Desenvolvimento de site",
-			"type":"income",
-			"category":"Venda",
-			"price":4000,
-			"createdAt": "2025-05-08T22:20:07.279Z"
-		}
-		,
-		{
-			"id": 13,
-			"description":"Padaria",
-			"type":"income",
-			"category":"Venda",
-			"price":4000,
-			"createdAt": "2025-05-08T22:20:07.279Z"
-		}
-
-    ]
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Desenvolvimento de site",
+      "type": "income",
+      "category": "Venda",
+      "price": 4000,
+      "createdAt": "2025-05-08T22:20:07.279Z"
+    },
+    {
+      "description": "Desenv App",
+      "price": 10000,
+      "category": "Venda",
+      "type": "income",
+      "createdAt": "2025-05-18T21:29:34.171Z",
+      "id": 2
+    },
+    {
+      "description": "Desenv App",
+      "price": 1000,
+      "category": "Venda",
+      "type": "income",
+      "createdAt": "2025-05-18T21:34:07.067Z",
+      "id": 3
+    },
+    {
+      "description": "Desenv App",
+      "price": 4,
+      "category": "Venda",
+      "type": "income",
+      "createdAt": "2025-05-18T21:34:27.819Z",
+      "id": 4
+    },
+    {
+      "description": "AD",
+      "price": 3,
+      "category": "Venda",
+      "type": "income",
+      "createdAt": "2025-05-18T21:59:59.853Z",
+      "id": 5
+    }
+  ]
 }
