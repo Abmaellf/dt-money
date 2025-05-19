@@ -39,6 +39,22 @@
       "type": "income",
       "createdAt": "2025-05-18T21:59:59.853Z",
       "id": 5
+    },
+    {
+      "description": "Lanche",
+      "price": 4,
+      "category": "Alimentacao",
+      "type": "outcome",
+      "createdAt": "2025-05-19T18:00:44.686Z",
+      "id": 6
+    },
+    {
+      "description": "Instagram",
+      "price": 7000,
+      "category": "Venda",
+      "type": "income",
+      "createdAt": "2025-05-19T21:40:48.906Z",
+      "id": 7
     }
   ]
 }
