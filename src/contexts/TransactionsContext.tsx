@@ -26,6 +26,7 @@ interface CreateTransactionInput {
 	type: 'income' | 'outcome'
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const TransactionsContext = createContext({} as TransactionContextType )
 
 
