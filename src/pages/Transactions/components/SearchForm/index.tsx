@@ -5,7 +5,6 @@ import * as z from 'zod';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { TransactionsContext } from "../../../../contexts/TransactionsContext";
 import { useContextSelector } from "use-context-selector";
-import { memo } from "react"
 /**
  * Por que um componente renderiza?
  * - Hooks changed (mudou estado, contexto, reducer);
